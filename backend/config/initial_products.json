@@ -1,0 +1,294 @@
+[
+  {
+    "_id": "product_sandbox_0",
+    "name": "Women Round Neck Cotton Top",
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an outer garment.",
+    "price": 20,
+    "image": [
+      "http://localhost:4000/uploads/p_img1.png"
+    ],
+    "category": "Women",
+    "subCategory": "Topwear",
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "bestseller": true,
+    "date": 1780400367716
+  },
+  {
+    "_id": "product_sandbox_1",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an outer garment.",
+    "price": 40,
+    "image": [
+      "http://localhost:4000/uploads/p_img2_1.png",
+      "http://localhost:4000/uploads/p_img2_2.png",
+      "http://localhost:4000/uploads/p_img2_3.png",
+      "http://localhost:4000/uploads/p_img2_4.png"
+    ],
+    "category": "Men",
+    "subCategory": "Topwear",
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "bestseller": true,
+    "date": 1780400367716
+  },
+  {
+    "_id": "product_sandbox_2",
+    "name": "Girls Round Neck Cotton Top",
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an outer garment.",
+    "price": 44,
+    "image": [
+      "http://localhost:4000/uploads/p_img3.png"
+    ],
+    "category": "Kids",
+    "subCategory": "Topwear",
+    "sizes": [
+      "S",
+      "L",
+      "XL"
+    ],
+    "bestseller": true,
+    "date": 1780400367716
+  },
+  {
+    "_id": "product_sandbox_3",
+    "name": "Men Tapered Fit Flat-Front Trousers",
+    "description": "A lightweight, usually knitted, pants, close-fitting and with a clean styling.",
+    "price": 38,
+    "image": [
+      "http://localhost:4000/uploads/p_img7.png"
+    ],
+    "category": "Men",
+    "subCategory": "Bottomwear",
+    "sizes": [
+      "S",
+      "L",
+      "XL"
+    ],
+    "bestseller": false,
+    "date": 1780400367716
+  },
+  {
+    "_id": "product_sandbox_4",
+    "name": "Women Palazzo Pants with Waist Belt",
+    "description": "A lightweight, usually knitted, palazzo pants, wide leg and stylish.",
+    "price": 38,
+    "image": [
+      "http://localhost:4000/uploads/p_img20.png"
+    ],
+    "category": "Women",
+    "subCategory": "Bottomwear",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "bestseller": false,
+    "date": 1780400367716
+  },
+  {
+    "_id": "product_sandbox_5",
+    "name": "Women Zip-Front Relaxed Fit Jacket",
+    "description": "A warm winter jacket crafted with premium fabrics.",
+    "price": 34,
+    "image": [
+      "http://localhost:4000/uploads/p_img21.png"
+    ],
+    "category": "Women",
+    "subCategory": "Winterwear",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "bestseller": false,
+    "date": 1780400367716
+  },
+  {
+    "_id": "product_sandbox_6",
+    "name": "Men Slim Fit Relaxed Denim Jacket",
+    "description": "A classic denim jacket designed for winter and cool weather.",
+    "price": 46,
+    "image": [
+      "http://localhost:4000/uploads/p_img28.png"
+    ],
+    "category": "Men",
+    "subCategory": "Winterwear",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "bestseller": false,
+    "date": 1780400367716
+  },
+  {
+    "_id": "product_sandbox_1780401257280",
+    "name": "Nike Advanced Gym Suit",
+    "description": "Designed with a prize in mind, this race-ready top helps keep you dry and comfortable as you cross the finish line. It’s sweat-wicking, breathable and elevated with a print inspired by the dazzling gleam of a diamond trophy.",
+    "category": "Women",
+    "price": 79,
+    "subCategory": "Topwear",
+    "bestseller": true,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "image": [
+      "http://localhost:4000/uploads/1780401257278-nike 1.avif",
+      "http://localhost:4000/uploads/1780401257279-nike 3.avif",
+      "http://localhost:4000/uploads/1780401257279-nike 4.avif",
+      "http://localhost:4000/uploads/1780401257279-nike2.avif"
+    ],
+    "date": 1780401257279
+  },
+  {
+    "_id": "product_sandbox_1780401309829",
+    "name": "Jordan Flight Women's Waffle Tank",
+    "description": "Waffle textured, all-over dyed and stone washed for that perfectly worn-in look. Your new favorite tank?\r\n\r\n",
+    "category": "Women",
+    "price": 40,
+    "subCategory": "Topwear",
+    "bestseller": true,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "image": [
+      "http://localhost:4000/uploads/1780401309827-nike11.avif",
+      "http://localhost:4000/uploads/1780401309828-nike12.avif",
+      "http://localhost:4000/uploads/1780401309828-nike13.avif",
+      "http://localhost:4000/uploads/1780401309828-nike14.avif"
+    ],
+    "date": 1780401309829
+  },
+  {
+    "_id": "product_sandbox_1780401367816",
+    "name": "Nike Tempo Women's Dri-FIT Fitted 1/2-Zip Running Top",
+    "description": "Find your rhythm feeling comfortable and focused. This fitted top is made with stretchy, quick-drying fabric and has a slightly cropped design for a distraction-free run.",
+    "category": "Women",
+    "price": 60,
+    "subCategory": "Topwear",
+    "bestseller": true,
+    "sizes": [
+      "S",
+      "XL",
+      "XXL",
+      "L"
+    ],
+    "image": [
+      "http://localhost:4000/uploads/1780401367815-nike21.avif",
+      "http://localhost:4000/uploads/1780401367815-nike22.avif",
+      "http://localhost:4000/uploads/1780401367816-nike23.avif",
+      "http://localhost:4000/uploads/1780401367816-nike24.avif"
+    ],
+    "date": 1780401367816
+  },
+  {
+    "_id": "product_sandbox_1780401534760",
+    "name": "Nike Sportswear Women's Loose T-Shirt",
+    "description": "Keep it classic. This boxy tee is made with midweight, washed cotton that's soft and slightly structured.",
+    "category": "Women",
+    "price": 45,
+    "subCategory": "Topwear",
+    "bestseller": true,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "image": [
+      "http://localhost:4000/uploads/1780401534758-nike41.avif",
+      "http://localhost:4000/uploads/1780401534758-nike42.avif",
+      "http://localhost:4000/uploads/1780401534759-nike43.avif",
+      "http://localhost:4000/uploads/1780401534759-nike44.avif"
+    ],
+    "date": 1780401534759
+  },
+  {
+    "_id": "product_sandbox_1780401581725",
+    "name": "Nike Sportswear Chill Knit Women's Slim Cropped T-Shirt",
+    "description": "This body-skimming tee is slightly cropped and perfect for everyday wear. The smooth jersey fabric is stretchy with a slight drape for an effortless feel.\r\n\r\n",
+    "category": "Women",
+    "price": 67,
+    "subCategory": "Topwear",
+    "bestseller": true,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "image": [
+      "http://localhost:4000/uploads/1780401581723-nike61.avif",
+      "http://localhost:4000/uploads/1780401581724-nike62.avif",
+      "http://localhost:4000/uploads/1780401581724-nike63.avif",
+      "http://localhost:4000/uploads/1780401581724-nike64.avif"
+    ],
+    "date": 1780401581724
+  },
+  {
+    "_id": "product_sandbox_1780401643908",
+    "name": "Nike ACG x United States Olympic Team Women's Therma-FIT ADV Jacket",
+    "description": "Rep Team USA on sport's biggest stage. Here's this jacket in a nutshell: Heat-regulating, water-repellent and lightweight. And when you don't need insulated warmth, fold it into the internal pocket for safekeeping.",
+    "category": "Women",
+    "price": 150,
+    "subCategory": "Topwear",
+    "bestseller": true,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "image": [
+      "http://localhost:4000/uploads/1780401643904-nike71.avif",
+      "http://localhost:4000/uploads/1780401643907-nike72.avif",
+      "http://localhost:4000/uploads/1780401643907-nike74.avif",
+      "http://localhost:4000/uploads/1780401643907-nike73.avif"
+    ],
+    "date": 1780401643908
+  },
+  {
+    "_id": "product_sandbox_1780401691125",
+    "name": "Nike MAVN Girls' Therma-FIT Knit Full-Zip Hoodie",
+    "description": "Escape from the cold in an oversized hoodie so soft you may never want to take it off. Cut from ultrawarm, heavyweight fabric that's peachy soft both inside and out, this premium knit fabric uses Therma-FIT technology to help you stay cozy. It's an elevated basic that's anything but.\r\n\r\n",
+    "category": "Kids",
+    "price": 98,
+    "subCategory": "Topwear",
+    "bestseller": true,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XXL",
+      "XL"
+    ],
+    "image": [
+      "http://localhost:4000/uploads/1780401691124-nike81.avif",
+      "http://localhost:4000/uploads/1780401691124-nike82.avif",
+      "http://localhost:4000/uploads/1780401691125-nike83.avif",
+      "http://localhost:4000/uploads/1780401691125-nike84.avif"
+    ],
+    "date": 1780401691125
+  }
+]
