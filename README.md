@@ -89,19 +89,19 @@ Threadly is organized into three major layers. The frontend clients (Storefront 
 
 ```mermaid
 graph TD
-    subgraph Client Panels
-        FE[React Storefront Client (Vite)]
-        AD[React Admin Dashboard (Vite)]
+    subgraph "Client Panels"
+        FE["React Storefront Client (Vite)"]
+        AD["React Admin Dashboard (Vite)"]
     end
 
-    subgraph API Gateway
-        API[Express.js Backend Server]
+    subgraph "API Gateway"
+        API["Express.js Backend Server"]
     end
 
-    subgraph Storage Layer
-        DB[(MongoDB Database)]
-        Local[Local Uploads File system]
-        Cloud[Cloudinary Media CDN]
+    subgraph "Storage Layer"
+        DB[("MongoDB Database")]
+        Local["Local Uploads File system"]
+        Cloud["Cloudinary Media CDN"]
     end
 
     FE -->|JSON API & Auth JWT| API
