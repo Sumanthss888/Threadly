@@ -120,7 +120,7 @@ graph TD
 * **Motion-First UI:** Powered by `framer-motion` for buttery smooth transitions, expanding panels, sliding drawers, and micro-interaction states.
 * **Responsive Layouts:** Meticulously optimized for all screen sizes, from mobile phones to high-resolution widescreen monitors.
 
-### 🛡️ Recruiter-Ready Self-Healing Backend
+### 🛡️ Self-Healing Backend
 * **Robust Media Upload Fallbacks:** Automatically redirects media uploads to the local filesystem if Cloudinary credentials (`CLOUDINARY_*`) are not configured, maintaining 100% catalog upload functionality out-of-the-box.
 * **Stripe Sandbox Simulation:** If Stripe secret keys are omitted, the backend automatically transitions to a mock Stripe checkout simulation, keeping the payment funnel active.
 * **Virtual Razorpay Simulator:** Includes a built-in virtual test gateway. It permits testing the native Razorpay flow interactively on localhost without key limits or checkout crashes.
