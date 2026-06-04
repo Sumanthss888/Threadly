@@ -122,18 +122,19 @@ const addProduct = async (req, res) => {
 const listProducts = async (req, res) => {
     try {
         
+        let products = [];
         if (mongoose.connection.readyState !== 1) {
-            return res.json({success:true,products:sandboxProducts})
+            products = sandboxProducts;
+        } else {
+            products = await productModel.find({});
         }
-
-        const products = await productModel.find({});
         
         // Dynamically replace localhost URL with current backend deployment URL
         const protocol = req.headers['x-forwarded-proto'] || req.protocol;
         const host = req.get('host');
         const baseUrl = `${protocol}://${host}`;
         const updatedProducts = products.map(product => {
-            const prodObj = product.toObject();
+            const prodObj = (typeof product.toObject === 'function') ? product.toObject() : { ...product };
             if (prodObj.image && Array.isArray(prodObj.image)) {
                 prodObj.image = prodObj.image.map(img => 
                     img.replace("http://localhost:4000", baseUrl)
@@ -179,19 +180,19 @@ const singleProduct = async (req, res) => {
     try {
         
         const { productId } = req.body
+        let product;
 
         if (mongoose.connection.readyState !== 1 || (productId && productId.startsWith("product_sandbox_"))) {
-            const product = sandboxProducts.find(p => p._id === productId);
-            return res.json({success:true,product})
+            product = sandboxProducts.find(p => p._id === productId);
+        } else {
+            product = await productModel.findById(productId);
         }
-
-        const product = await productModel.findById(productId)
         
         if (product) {
             const protocol = req.headers['x-forwarded-proto'] || req.protocol;
             const host = req.get('host');
             const baseUrl = `${protocol}://${host}`;
-            const prodObj = product.toObject();
+            const prodObj = (typeof product.toObject === 'function') ? product.toObject() : { ...product };
             if (prodObj.image && Array.isArray(prodObj.image)) {
                 prodObj.image = prodObj.image.map(img => 
                     img.replace("http://localhost:4000", baseUrl)
