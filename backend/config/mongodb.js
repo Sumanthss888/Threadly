@@ -10,30 +10,34 @@ const __dirname = path.dirname(__filename);
 const connectDB = async () => {
     // Ensure local public/uploads exists and copy initial seed images from frontend assets on start
     try {
-        const uploadsDir = path.join(__dirname, "..", "public", "uploads");
-        if (!fs.existsSync(uploadsDir)) {
-            fs.mkdirSync(uploadsDir, { recursive: true });
-        }
-        const seedPath = path.join(__dirname, "initial_products.json");
-        const frontendAssetsDir = path.join(__dirname, "..", "..", "frontend", "src", "assets");
-        if (fs.existsSync(seedPath) && fs.existsSync(frontendAssetsDir)) {
-            const rawData = fs.readFileSync(seedPath, "utf8");
-            const initialProducts = JSON.parse(rawData);
-            initialProducts.forEach(prod => {
-                prod.image.forEach(imgName => {
-                    if (!imgName.startsWith("http")) {
-                        const srcPath = path.join(frontendAssetsDir, imgName);
-                        const destPath = path.join(uploadsDir, imgName);
-                        if (fs.existsSync(srcPath) && !fs.existsSync(destPath)) {
-                            try {
-                                fs.copyFileSync(srcPath, destPath);
-                            } catch (e) {
-                                console.error(`Failed to copy seed image ${imgName}:`, e.message);
+        if (process.env.VERCEL) {
+            console.log("ℹ️ Running in Vercel environment. Skipping local seed asset copying.");
+        } else {
+            const uploadsDir = path.join(__dirname, "..", "public", "uploads");
+            if (!fs.existsSync(uploadsDir)) {
+                fs.mkdirSync(uploadsDir, { recursive: true });
+            }
+            const seedPath = path.join(__dirname, "initial_products.json");
+            const frontendAssetsDir = path.join(__dirname, "..", "..", "frontend", "src", "assets");
+            if (fs.existsSync(seedPath) && fs.existsSync(frontendAssetsDir)) {
+                const rawData = fs.readFileSync(seedPath, "utf8");
+                const initialProducts = JSON.parse(rawData);
+                initialProducts.forEach(prod => {
+                    prod.image.forEach(imgName => {
+                        if (!imgName.startsWith("http")) {
+                            const srcPath = path.join(frontendAssetsDir, imgName);
+                            const destPath = path.join(uploadsDir, imgName);
+                            if (fs.existsSync(srcPath) && !fs.existsSync(destPath)) {
+                                try {
+                                    fs.copyFileSync(srcPath, destPath);
+                                } catch (e) {
+                                    console.error(`Failed to copy seed image ${imgName}:`, e.message);
+                                }
                             }
                         }
-                    }
+                    });
                 });
-            });
+            }
         }
     } catch (err) {
         console.error("❌ Failed to copy local seed images on startup:", err.message);
