@@ -1,6 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 import 'dotenv/config'
+import path from 'path'
+import fs from 'fs'
 import connectDB from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
 import userRouter from './routes/userRoute.js'
@@ -20,6 +22,27 @@ app.use(cors())
 
 // Serve static uploads for local sandbox mode fallback
 app.use('/uploads', express.static('public/uploads'))
+
+// debug endpoint to check filesystem on Vercel
+app.get('/api/debug-files', (req, res) => {
+    try {
+        const cwd = process.cwd();
+        const files = fs.readdirSync(cwd);
+        const publicExists = fs.existsSync(path.join(cwd, 'public'));
+        let publicFiles = [];
+        let uploadsFiles = [];
+        if (publicExists) {
+            publicFiles = fs.readdirSync(path.join(cwd, 'public'));
+            const uploadsExists = fs.existsSync(path.join(cwd, 'public', 'uploads'));
+            if (uploadsExists) {
+                uploadsFiles = fs.readdirSync(path.join(cwd, 'public', 'uploads'));
+            }
+        }
+        res.json({ cwd, files, publicExists, publicFiles, uploadsFiles });
+    } catch (err) {
+        res.json({ error: err.message });
+    }
+});
 
 // api endpoints
 app.use('/api/user',userRouter)
