@@ -127,7 +127,22 @@ const listProducts = async (req, res) => {
         }
 
         const products = await productModel.find({});
-        res.json({success:true,products})
+        
+        // Dynamically replace localhost URL with current backend deployment URL
+        const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+        const host = req.get('host');
+        const baseUrl = `${protocol}://${host}`;
+        const updatedProducts = products.map(product => {
+            const prodObj = product.toObject();
+            if (prodObj.image && Array.isArray(prodObj.image)) {
+                prodObj.image = prodObj.image.map(img => 
+                    img.replace("http://localhost:4000", baseUrl)
+                );
+            }
+            return prodObj;
+        });
+
+        res.json({success:true,products: updatedProducts})
 
     } catch (error) {
         console.log(error)
@@ -171,6 +186,20 @@ const singleProduct = async (req, res) => {
         }
 
         const product = await productModel.findById(productId)
+        
+        if (product) {
+            const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+            const host = req.get('host');
+            const baseUrl = `${protocol}://${host}`;
+            const prodObj = product.toObject();
+            if (prodObj.image && Array.isArray(prodObj.image)) {
+                prodObj.image = prodObj.image.map(img => 
+                    img.replace("http://localhost:4000", baseUrl)
+                );
+            }
+            return res.json({success:true,product: prodObj})
+        }
+
         res.json({success:true,product})
 
     } catch (error) {
