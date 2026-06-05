@@ -31,18 +31,22 @@ app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')))
 app.get('/api/debug-files', (req, res) => {
     try {
         const cwd = process.cwd();
-        const files = fs.readdirSync(cwd);
-        const publicExists = fs.existsSync(path.join(cwd, 'public'));
-        let publicFiles = [];
+        const dirname = __dirname;
+        const dirnameFiles = fs.readdirSync(dirname);
+        const uploadsPath = path.join(dirname, 'public', 'uploads');
+        const uploadsExists = fs.existsSync(uploadsPath);
         let uploadsFiles = [];
-        if (publicExists) {
-            publicFiles = fs.readdirSync(path.join(cwd, 'public'));
-            const uploadsExists = fs.existsSync(path.join(cwd, 'public', 'uploads'));
-            if (uploadsExists) {
-                uploadsFiles = fs.readdirSync(path.join(cwd, 'public', 'uploads'));
-            }
+        if (uploadsExists) {
+            uploadsFiles = fs.readdirSync(uploadsPath);
         }
-        res.json({ cwd, files, publicExists, publicFiles, uploadsFiles });
+        res.json({ 
+            cwd, 
+            dirname, 
+            dirnameFiles, 
+            uploadsPath, 
+            uploadsExists, 
+            uploadsFiles 
+        });
     } catch (err) {
         res.json({ error: err.message });
     }
