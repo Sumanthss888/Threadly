@@ -64,7 +64,7 @@ const Login = ({ setToken }) => {
                 value={email}
                 className="w-full px-4 py-3 rounded-xl border border-apple-border bg-white/50 text-[14px] outline-none transition-all focus:border-threadly-gold focus:bg-white"
                 type="email"
-                placeholder="admin@example.com"
+                placeholder="sumanthss308@gmail.com"
                 required
               />
             </div>
