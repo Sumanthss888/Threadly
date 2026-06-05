@@ -39,13 +39,15 @@ app.get('/api/debug-files', (req, res) => {
         if (uploadsExists) {
             uploadsFiles = fs.readdirSync(uploadsPath);
         }
+        const dbState = mongoose.connection.readyState;
         res.json({ 
             cwd, 
             dirname, 
             dirnameFiles, 
             uploadsPath, 
             uploadsExists, 
-            uploadsFiles 
+            uploadsFiles,
+            dbState
         });
     } catch (err) {
         res.json({ error: err.message });
